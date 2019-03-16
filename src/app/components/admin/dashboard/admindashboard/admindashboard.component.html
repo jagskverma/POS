@@ -1,0 +1,92 @@
+<app-header></app-header>
+<div class="admincontainer">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #sidenav
+      mode="side"
+      opened
+      class="sidenav-left"
+      [fixedInViewport]="false"
+      [fixedTopGap]="0"
+      [fixedBottomGap]="0"
+      [disableClose]="true"
+    >
+      <div class="scrollbar" id="style-1">
+        <div class="metadata-content">
+            <div class="sidenav-metadata" *ngFor="let l of list">
+                {{ l.name }} Rate : {{ l.value }}
+              </div>
+              <div class="sidenav-metadata">
+                Date : {{ now | date: "mediumDate" }}
+              </div>
+              <div class="sidenav-metadata">Time : {{ now | date: "hh:mm:ss" }}</div>
+        </div>
+        
+
+        <div class="navlink" (click)="displayReport()" >
+          <mat-icon class="mr-1">trending_up</mat-icon>
+          DISPLAY REPORT
+        </div>
+
+        <div class="navlink" (click)="manageProducts()">
+          <mat-icon class="mr-1">dashboard</mat-icon>
+          MANAGE PRODUCTS
+        </div>
+
+        <div class="navlink" (click)="manageSales()">
+          <mat-icon class="mr-1">dvr</mat-icon>
+          MANAGE SALES
+        </div>
+
+        <div class="navlink" (click)="managePurchase()">
+          <mat-icon class="mr-1">local_atm</mat-icon>
+          MANAGE PURCHASE
+        </div>
+        <div class="navlink" (click)="manageOrders()">
+          <mat-icon class="mr-1">receipt</mat-icon>
+          MANAGE ORDERS
+        </div>
+        <div class="navlink" (click)="manageCustomers()">
+          <mat-icon class="mr-1">person</mat-icon>
+          MANAGE CUSTOMERS
+        </div>
+        <div class="navlink" (click)="manageStaff()">
+          <mat-icon class="mr-1">person</mat-icon>
+          MANAGE STAFF
+        </div>
+        <div class="navlink" (click)="manageMahajaan()">
+          <mat-icon class="mr-1">person</mat-icon>
+          MANAGE MAHAJAAN
+        </div>
+        <div class="navlink" (click)="manageKaarigar()">
+          <mat-icon class="mr-1">person</mat-icon>
+          MANAGE KAARIGAR
+        </div>
+        <div class="navlink" (click)="managePaymentType()">
+          <mat-icon class="mr-1">credit_card</mat-icon>
+          MANAGE PAYMENT TYPE
+        </div>
+        <div class="navlink" (click)="manageProductType()">
+          <mat-icon class="mr-1">list</mat-icon>
+          MANAGE PRODUCT TYPE
+        </div>
+
+        <div class="navlink" (click)="generateStatement()">
+          <mat-icon class="mr-1">receipt</mat-icon>
+          GENERATE STATEMENT
+        </div>
+        <div class="navlink" (click)="logout()">
+          <mat-icon class="mr-1">logout</mat-icon>
+          Logout
+        </div>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    
+  </mat-sidenav-container>
+</div>
+
+<app-footer></app-footer>

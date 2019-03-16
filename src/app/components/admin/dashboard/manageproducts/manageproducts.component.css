@@ -1,0 +1,19 @@
+.products-container{
+    height: 120%;
+}
+.scrollbar {
+    background-color: #F5F5F5;
+    float: left;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+  }
+  
+  #style-1::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+  }
+  
+  #style-1::-webkit-scrollbar-thumb {
+    background-color: #3a3a3a;
+  }

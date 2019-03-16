@@ -1,0 +1,15 @@
+.filler{
+    flex: 1 1 auto;
+}
+.buttons,.closebutton{
+    margin:2px;
+}
+.brandName:hover{
+    cursor: default;
+}
+.buttons:hover{
+    background-color:#ffffff80;
+}
+.closebutton:hover{
+    background-color:rgb(255, 89, 89);
+}

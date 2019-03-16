@@ -1,0 +1,29 @@
+<div class="login-container">
+    <div class="login-content" >
+      <mat-toolbar class="login-toolbar" color="primary"><mat-icon>shopping_cart</mat-icon>
+        Staff Login
+          <span class="filler"></span>
+
+        <div class="adminLoginButton">
+          <button mat-icon-button matTooltip="Admin Login" (click)="adminLoginDialog()" >
+            <mat-icon>settings</mat-icon>
+          </button>
+        </div>
+      </mat-toolbar>
+      <mat-card >
+        <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit(username, password)">
+          <mat-form-field>
+            <mat-icon matPrefix>person_fill</mat-icon>
+            <input autofocus type="text" matInput placeholder="Username" formControlName="username">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-icon matPrefix>lock_fill</mat-icon>
+            <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+          </mat-form-field>
+
+          <button type="submit" mat-raised-button  color="primary" [disabled]="!loginForm.valid">Login</button>
+        </form>
+      </mat-card>
+    </div>
+  </div>

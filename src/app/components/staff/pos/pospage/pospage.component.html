@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div class="poscontainer">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #sidenav
+      mode="side"
+      opened
+      class="sidenav-left"
+      [fixedInViewport]="false"
+      [fixedTopGap]="0"
+      [fixedBottomGap]="0"
+      [disableClose]="true"
+    >
+    <div class="scrollbar" id="style-1">
+        <div class="metadata-content">
+
+      <div class="sidenav-metadata" *ngFor="let l of list">
+        {{ l.name }} Rate : {{ l.value }}
+      </div>
+      <div class="sidenav-metadata">Date : {{ now | date: "mediumDate" }}</div>
+
+      <div class="sidenav-metadata">Time : {{ now | date: "hh:mm:ss" }}</div>
+
+      <div class="sidenav-metadata">Logged in as : {{ username }}</div>
+    </div>
+      <div class="navlink" (click)="openPOSContent()">
+        <mat-icon class="mr-1">receipt</mat-icon>
+        POS
+      </div>
+
+      <div class="navlink" (click)="openCalculator()">
+        <mat-icon class="mr-1">keyboard</mat-icon>
+        CALCULATOR
+      </div>
+
+      <div class="navlink" (click)="openOrders()">
+        <mat-icon class="mr-1">assignment</mat-icon>
+        ORDERS
+      </div>
+      <div class="navlink" (click)="openLog()">
+        <mat-icon class="mr-1">description</mat-icon>
+        VIEW LOG
+      </div>
+      <div class="navlink" (click)="openInvoice()">
+        <mat-icon class="mr-1">print</mat-icon>
+        GENERATE INVOICE
+      </div>
+      <div class="navlink" (click)="backupData()">
+        <mat-icon class="mr-1">backup</mat-icon>
+        BACKUP
+      </div>
+      <div class="navlink" (click)="logout()">
+        <mat-icon class="mr-1">logout</mat-icon>
+        Logout
+      </div>
+    </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<app-footer></app-footer>

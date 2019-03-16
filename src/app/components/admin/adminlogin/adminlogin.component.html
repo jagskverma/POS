@@ -1,0 +1,50 @@
+  <div class="login-content">
+    <mat-toolbar class="login-toolbar" color="primary"
+      >Admin Login
+      <span class="filler"></span>
+
+      <div class="closeButton">
+        <button mat-icon-button matDialogClose>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+    <mat-card>
+      <form
+        [formGroup]="loginForm"
+        novalidate
+        (ngSubmit)="onSubmit(username, password)"
+      >
+        <mat-form-field>
+          <mat-icon matPrefix>person_fill</mat-icon>
+          <input
+            autofocus
+            type="text"
+            matInput
+            placeholder="Username"
+            formControlName="username"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-icon matPrefix>lock_fill</mat-icon>
+          <input
+            type="password"
+            autocomplete="false"
+            matInput
+            placeholder="Password"
+            formControlName="password"
+          />
+        </mat-form-field>
+
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="!loginForm.valid"
+        >
+          Login
+        </button>
+      </form>
+    </mat-card>
+  </div>
